@@ -1,2 +1,2 @@
-Created by tuannguyencs<br><br>
-Web Application - Binary-to-Decimal Number Converter
+Binary-to-Decimal Number Converter Web Application Using ASP.NET Core
+Created by tuannguyencs
