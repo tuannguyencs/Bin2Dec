@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bin2Dec";
+}
+
+<h1 class="display-4 text-center" style="margin: 1em; font-size: 2.5em">Binary to Decimal Converter</h1>
+
+<div class="text-center form">
+    <div class="text-center" style="margin-bottom: 1em">
+        <label for="binary">Binary String</label>
+        <input type="text" id="binary" name="binary" required />
+        <div class="invalid-feedback" id="binary-error">Only 0s and 1s allowed.</div>
+        <div class="invalid-feedback" id="empty-input-error">There is nothing entered.</div>
+    </div>
+
+    <div class="text-center" style="margin-bottom: 2.5em">
+        <label for="decimal">Decimal Conversion</label>
+        <input type="text" id="decimal" name="decimal" disabled="disabled" />
+    </div>
+
+    <div class="text-center">
+        <input type="button" id="convert" name="convert" value="Convert" />
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('#convert').click(function () {
+                var binaryStr = $('#binary').val();
+                if (binaryStr == '') {
+                    $('#decimal').val('');
+                    $('#empty-input-error').show();
+                    $('#binary-error').hide();
+                    return;
+                } else if (/^[01]+$/.test(binaryStr)) {
+                    var decimalNum = parseInt(binaryStr, 2);
+                    $('#decimal').val(decimalNum);
+                    $('#empty-input-error').hide();
+                    $('#binary-error').hide();
+                } else {
+                    $('#decimal').val('');
+                    $('#empty-input-error').hide();
+                    $('#binary-error').show();
+                }
+            });
+        });
+    </script>
+}
