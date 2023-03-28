@@ -6,6 +6,8 @@
 
 <h1 class="display-4 text-center" style="margin: 1em; font-size: 2.5em">Binary to Decimal Converter</h1>
 
+@*Creating the form layout with input boxes and buttons for functionality
+IDs are allocated so that the jQuery scripts can access the elements*@
 <div class="text-center form">
     <div class="text-center" style="margin-bottom: 1em">
         <label for="binary">Binary String</label>
@@ -24,6 +26,8 @@
     </div>
 </div>
 
+@*jQuery being used to manipulate HTML document here for event handling and AJAX interactions
+jQuery adds/removes content, change styles, and respond to events*@
 @section Scripts {
     <script>
         $(function () {
